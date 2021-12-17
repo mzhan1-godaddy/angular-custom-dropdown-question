@@ -3,29 +3,14 @@
         <custom-dropdown
                 id="dinner"
                 [items]="dinnerItems"
-                [onChange]="onChange"
+                (change)="handleInputChange($event)"
         >
         </custom-dropdown>
     </card>
 
     <card title="App's onChange(event)">
-
+        <pre><code>{{getChangeValue()}}</code></pre>
     </card>
 </div>
-
-<!--<div class="App">-->
-<!--    <card title="`<code><CustomDropdown/></code>`">-->
-<!--                <custom-dropdown id="dinner" items={dinnerItems} onChange={onChange}/>-->
-<!--        first-->
-<!--    </card>-->
-
-<!--    <card title="`<code>'onChange(event)'</code>`">-->
-<!--        <code>-->
-<!--                    <pre>-->
-<!--                        {{getChangeValue()}}-->
-<!--                    </pre>-->
-<!--        </code>-->
-<!--    </card>-->
-<!--</div>-->
 
 <router-outlet></router-outlet>

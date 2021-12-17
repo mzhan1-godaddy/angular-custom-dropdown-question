@@ -1,8 +1,6 @@
 import {Component} from '@angular/core';
 import {CardComponent} from "../components/card/card.component";
-import {CustomDropdownComponent} from "../components/custom-dropdown/custom-dropdown.component";
-import {IconComponent} from "../components/icon/icon.component";
-
+import {CustomDropdownComponent, DropdownItem} from "../components/custom-dropdown/custom-dropdown.component";
 
 export interface InputChangeEvent {
     id: string;
@@ -32,14 +30,14 @@ const dinnerItems = [
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    change = undefined;
     dinnerItems = dinnerItems;
+    change?: InputChangeEvent;
 
     getChangeValue() {
         return JSON.stringify(this.change, null, 2);
     }
 
-    onChange(event: InputChangeEvent) {
-        console.log(event);
+    handleInputChange(event: InputChangeEvent) {
+        this.change = event;
     }
 }
