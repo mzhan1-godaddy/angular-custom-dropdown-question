@@ -1,10 +1,15 @@
 <div class="content" role="main">
     <card title="<CustomDropdown/>">
-        <custom-dropdown id="dinner" [items]="dinnerItems"></custom-dropdown>
+        <custom-dropdown
+                id="dinner"
+                [items]="dinnerItems"
+                [onChange]="onChange"
+        >
+        </custom-dropdown>
     </card>
 
     <card title="App's onChange(event)">
-        XDXDXD
+
     </card>
 </div>
 

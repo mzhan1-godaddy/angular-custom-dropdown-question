@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {InputChangeEvent} from "../../app/app.component";
 
 export interface DropdownItem {
     label: string;
@@ -16,5 +17,6 @@ export interface DropdownItem {
 export class CustomDropdownComponent {
     @Input() id = '';
     @Input() items: DropdownItem[] = [];
-    @Input() onChange: () => void = () => {};
+    @Input() onChange: (event: InputChangeEvent) => void = (event: InputChangeEvent) => {
+    };
 }

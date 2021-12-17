@@ -30,8 +30,15 @@ export class AppComponent {
         return JSON.stringify(this.change, null, 2);
     }
 
-    onChange(event: any) {
+    onChange(event: InputChangeEvent) {
         console.log(event);
     }
 }
 
+export interface InputChangeEvent {
+    id: string;
+    value: {
+        label: string;
+        value: string;
+    }
+}
