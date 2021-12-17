@@ -3,6 +3,15 @@ import {CardComponent} from "../components/card/card.component";
 import {CustomDropdownComponent} from "../components/custom-dropdown/custom-dropdown.component";
 import {IconComponent} from "../components/icon/icon.component";
 
+
+export interface InputChangeEvent {
+    id: string;
+    value: {
+        label: string;
+        value: string;
+    }
+}
+
 function createItem(label: string, value: string, iconText: string) {
     return {
         value,
@@ -32,13 +41,5 @@ export class AppComponent {
 
     onChange(event: InputChangeEvent) {
         console.log(event);
-    }
-}
-
-export interface InputChangeEvent {
-    id: string;
-    value: {
-        label: string;
-        value: string;
     }
 }
