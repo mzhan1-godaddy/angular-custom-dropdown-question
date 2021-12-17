@@ -10,28 +10,9 @@ export interface DropdownItem {
 @Component({
     selector: 'custom-dropdown',
     template: `
-        <div class="custom-button" >{{currentItem?.iconText}} {{currentItem?.label}}</div>
-        <div *ngFor="let item of items" class="custom-button" (click)="handleClick(item)">
-            {{item.iconText}} {{item.label}}
-        </div>
-        
+        <div class="custom-button">TODO implement this</div>
     `,
     styleUrls: ['./custom-dropdown.component.scss']
 })
 export class CustomDropdownComponent {
-    @Input() id = '';
-    @Input() items: DropdownItem[] = [];
-    @Output() change = new EventEmitter<InputChangeEvent>();
-    currentItem?: DropdownItem;
-
-    handleClick(item: DropdownItem) {
-        this.currentItem = item;
-        this.change.emit({
-            id: this.id,
-            value: {
-                label: item.label,
-                value: item.value
-            }
-        });
-    }
 }
