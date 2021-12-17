@@ -1,27 +1,35 @@
-# Sample
+# Angular Custom Dropdown
+Create a reusable dropdown component, named <custom-dropdown> without using <select> or <option> tags
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.2.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Requirements
+- use HTML <div> elements for all elements.
+- <custom-dropdown/> should support the following input props:
+    - id: string
+    - items: array of `DropdownItem`s
+    - change: call back function
+Current Value Element
+- The current value element should always render the current value of the dropdown
+- The first render should start with an empty value
+- Clicking on the dropdown should toggle the visibility of the dropdown items in the list
+- Clicking any list item should do the following:
+    - Update the current value of the dropdown
+    - Hide the list items
+    - Invoke the method handleInputChange(event: InputChangeEvent) of the parent
+- In the onChange function, event has the shape:
+```json
+{
+    id: string,
+    value: {
+        label: string,
+        value: string
+    }
+}
+```
+## Dropdown States
+Here's some images displaying different states of the dropdown:
+### Initial Render
+![Initial Render](./public/initial-render.png)
+### After Current Value Element Clicked
+![After Current Value Element Clicked](./public/after-current-value-element-clicked.png)
+### After Item Selected
+![After Item Selected](./public/after-item-selected.png)
